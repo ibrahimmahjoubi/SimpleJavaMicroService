@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  service-a:
+    build: Apps/Service-A
+    restart: always
+    ports:
+      - 8080:8080
+  service-b:
+    build: Apps/Service-B
+    restart: always
+    ports:
+      - 8081:8080
+    depends_on:
+      - service-a
